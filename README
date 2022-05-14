@@ -3,6 +3,9 @@ Date: 5/13/2022
 Project 7
 Project 1 Redo
 
+To compile program, use command "make".
+To clean repository of all executables and objects files, use command "make clean"
+
 For help on running the program, issue command "./chain -h" which will tell you exactly how to run the full program.
 
 Version control accomplished using Git and GitHub. Program can be found under username "dmmv2r" and is called "OSmcdonoug.7". Or you can copy and paste the link github.com/dmmv2r/OSmcdonoug.7
