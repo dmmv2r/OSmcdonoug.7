@@ -1,0 +1,30 @@
+Name: Donovan McDonough
+Date: 5/13/2022
+Project 7
+Project 1 Redo
+
+For help on running the program, issue command "./chain -h" which will tell you exactly how to run the full program.
+
+Version control accomplished using Git and GitHub. Program can be found under username "dmmv2r" and is called "OSmcdonoug.7". Or you can copy and paste the link github.com/dmmv2r/OSmcdonoug.7
+
+NOTE: I do not believe I did part 8 correctly, as the outputs and the code itself acts weird. The program still works, but you are required to enter at least the amount of characters as you gave in the command line and you are required to do it for each process. All of the other questions can be run and checked by simply commenting/uncommenting the stretches of code that are left in the last several lines. Every other part of the program works very well, just part 8 that is weird.
+
+
+OBSERVATIONS:
+1. In running this program for a different number of processes, I noticed that some things were consistent and others not so much. I noticed that every time, the process with i = 2 always had a PPID of 1, meaning that the parent process (i = 1) always terminated before i = 2 had reached the fprintf section. I also noticed that random processes parents would be terminated before the child had reached the fprintf statement, though this seemed random and unpredictable. Also, usually the processes were terminating in incremental order of i, but sometimes one process would end out of order (juts one spot away) and this was unpredictable.
+
+2. 26947 -> 26948 -> 26949 -> 26950
+
+3. I noticed that anywhere between 30-50% of the processes were adopted by init when doing this. The lower numbers I tested were more spread out in range where as the higher numbers seemed to always fall around 35%.
+
+4. In doing this, I noticed that the program never made it past process 28. No matter how many processes i tried to run, it would always stop at process 28, and that processes child pid would be -1 each time. I also noticed that the same percentage of processes were being adopted by init with the sleep, as there were without the sleep.
+
+5. Doing this still does not allow for more than 28 processes, and the child's pid of the 28th process is still -1. I noticed that all of the processes information is outputted together, then they all sleep, then they all output together again. Also, none of the processes PPID is 1, until the final time through when only some of them become orphaned and are adopted by init. Changing the sleep time (m) only affects how much time is between each "wave" of outputs while changing the iteration number (k) affects how many "waves" there are.
+
+6. Replacing the sleep with a wait results in several things. One of which is that the processes are now outputted in reverse, meaning that they are outputted in decreasing i order. Next is that there are no longer any child processes being adopted by init and having a PPID of 1. However, this does not affect the program being able to execute more than 28 processes, and the 28th processes child pid is still -1. This still remains as in issue, resulting in 100 processes not being able to execute.
+
+7. Changing the single fprintf statement to four fprintf statements had no affect on the program or how the processes information was outputted. The information is still easy to read, printed in the same order, and all of the information is correct. Still no more than 28 processes can be executed.
+
+8. 
+
+
